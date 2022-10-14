@@ -2,7 +2,7 @@ name: publish to nuget
 
 on:
   push:
-    branches: [ master ]
+    branches: [ publish ]
 jobs:
   build:
     runs-on: ubuntu-latest
