@@ -15,15 +15,17 @@
 		<PackageLicenseUrl>https://github.com/sampsonye/Nice.HttpProxy/blob/master/LICENSE.txt</PackageLicenseUrl>
 		<PackageTags>Forward;Forwarder;Shadow;yarp;nginx;reserve</PackageTags>
 		<Description>基于Http1.1的请求转发和影子请求工具包</Description>
-		<PackageReadmeFile>../README.md</PackageReadmeFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<VersionMajor>1</VersionMajor>
 		<VersionMinor>0</VersionMinor>
 		<VersionPatch>1</VersionPatch>
 		<VersionQuality></VersionQuality>
 		<VersionPrefix>$(VersionMajor).$(VersionMinor).$(VersionPatch)</VersionPrefix>
+		
 	</PropertyGroup>
 	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+		<None Include="../README.md" Pack="true" PackagePath="\"/>
 	</ItemGroup>
 
 </Project>
