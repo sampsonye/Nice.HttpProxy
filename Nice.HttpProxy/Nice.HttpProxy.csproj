@@ -4,18 +4,23 @@
 		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<Version>1.0.0</Version>
 		<Authors>Sampson</Authors>
 		<Company>Fingertip</Company>
 		<Product>Http Request Forward with Shadow Requests</Product>
 		<RepositoryUrl>https://github.com/sampsonye/Nice.HttpProxy</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<RepositoryRoot>$(MSBuildThisFileDirectory)</RepositoryRoot>
-		<PackageIconUrl>https://raw.githubusercontent.com/dotnetcore/CAP/master/docs/content/img/logo.png</PackageIconUrl>
+		<PackageIconUrl>https://github.com/sampsonye/Nice/raw/master/Nice.png</PackageIconUrl>
 		<PackageProjectUrl>https://github.com/sampsonye/Nice.HttpProxy</PackageProjectUrl>
 		<PackageLicenseUrl>https://github.com/sampsonye/Nice.HttpProxy/blob/master/LICENSE.txt</PackageLicenseUrl>
 		<PackageTags>Forward;Forwarder;Shadow;yarp;nginx;reserve</PackageTags>
 		<Description>基于Http1.1的请求转发和影子请求工具包</Description>
+		<PackageReadmeFile>../README.md</PackageReadmeFile>
+		<VersionMajor>1</VersionMajor>
+		<VersionMinor>0</VersionMinor>
+		<VersionPatch>0</VersionPatch>
+		<VersionQuality></VersionQuality>
+		<VersionPrefix>$(VersionMajor).$(VersionMinor).$(VersionPatch)</VersionPrefix>
 	</PropertyGroup>
 	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
