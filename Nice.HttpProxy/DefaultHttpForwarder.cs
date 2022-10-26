@@ -27,19 +27,19 @@ namespace Nice.HttpProxy
             Task.Factory.StartNew(ChannelConsumeLoop, TaskCreationOptions.LongRunning);
         }
 
-        public ValueTask SendAsync(HttpContext context, Func<HttpContext, IEnumerable<string>> destinctions, Func<Uri, HttpRequestMessage, ValueTask>? requestTransform = null)
+        public ValueTask SendAsync(HttpContext context, Func<HttpContext, IEnumerable<string>> destinations, Func<Uri, HttpRequestMessage, ValueTask>? requestTransform = null)
         {
-            var destinctionRequestList = destinctions.Invoke(context);
+            var destinctionRequestList = destinations.Invoke(context);
             return SendAsync(context, destinctionRequestList, requestTransform);
         }
        
-        public async ValueTask SendAsync(HttpContext context, IEnumerable<string> destinctions, Func<Uri, HttpRequestMessage, ValueTask>? requestTransform = null)
+        public async ValueTask SendAsync(HttpContext context, IEnumerable<string> destinations, Func<Uri, HttpRequestMessage, ValueTask>? requestTransform = null)
         {
-            if (destinctions == null || !destinctions.Any())
+            if (destinations == null || !destinations.Any())
             {
-                throw new ArgumentException("Invalid destination.", nameof(destinctions));
+                throw new ArgumentException("Invalid destination.", nameof(destinations));
             }
-            var allTargets = destinctions.Select(d => RequestUtilities.MakeDestinationAddress(d, context.Request.Path, context.Request.QueryString)).ToList();
+            var allTargets = destinations.Select(d => RequestUtilities.MakeDestinationAddress(d, context.Request.Path, context.Request.QueryString)).ToList();
 
             var defaultTarget = allTargets.First();
             var httpMessage = await CreateRequestMessageAsync(context);
